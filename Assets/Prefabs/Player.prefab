@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 3441759010692948120}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +572,7 @@ MonoBehaviour:
   mouseSensY: 25
   controller: {fileID: 6594172223330790868}
   cam: {fileID: 8299305838084945472}
+  audioController: {fileID: 0}
 --- !u!114 &1401477429690272891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
   bullet: {fileID: 4624098530854699858, guid: f12eda1bd19c6a248a169ae63af66de2, type: 3}
   projectileSpawn: {fileID: 3445500172316487040}
-  projectileForce: 10
+  projectileForce: 20
 --- !u!114 &3441759010692948120
 MonoBehaviour:
   m_ObjectHideFlags: 0

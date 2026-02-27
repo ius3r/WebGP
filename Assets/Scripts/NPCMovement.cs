@@ -11,11 +11,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] private List<GameObject> waypoints = new List<GameObject>();
     private Vector3 destination;
     private int index;
-    private void OnValidate(){
-        if (gameObject == null) return;
-
-        this.ValidateRefs();
-    }
+    private void OnValidate() => this.ValidateRefs();
 
     void Start()
     {
@@ -30,6 +26,23 @@ public class NPCMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, destination) < 3f)
         {
             index = (index + 1) % waypoints.Count;
+            destination = waypoints[index].transform.position;
+            agent.destination = destination;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            destination = other.transform.position;
+            agent.destination = destination;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
             destination = waypoints[index].transform.position;
             agent.destination = destination;
         }
