@@ -1,14 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class Menu : PersistentSingleton<Menu>
 {
-    public void StartPlayGameAdditive()
+    [SerializeField] private Button saveBtn;
+    [SerializeField] private Button loadBtn;
+
+    private void Start()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
-    }
-    public void StartPlayGameSingle()
-    {
-        SceneManager.LoadScene("SampleScene");
+        saveBtn.onClick.AddListener(() =>
+        {
+            SaveLoadSystem.instance.gameData.fileName = "Menu"; // Be able to use UI Input Fields to save the file name
+            SaveLoadSystem.instance.gameData.sceneName = "SampleScene";
+            SaveLoadSystem.instance.SaveGame();
+        });
+        loadBtn.onClick.AddListener(() =>
+        {
+            SaveLoadSystem.instance.LoadGame("Menu");
+        });
     }
 }

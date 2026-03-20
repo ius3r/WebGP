@@ -17,7 +17,6 @@ public class PlayerInput : MonoBehaviour
     private float camXRotation;
     [SerializeField, Self] private CharacterController controller;
     [SerializeField, Child] private Camera cam;
-    [SerializeField, Scene] private AudioController audioController;
     private void OnValidate()
     {
         this.ValidateRefs();
@@ -39,7 +38,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        audioController.PlayJumpSFX();
+        AudioController.Instance.PlayJumpSFX();
     }
 
     void Update()
@@ -62,7 +61,7 @@ public class PlayerInput : MonoBehaviour
         cam.gameObject.transform.localRotation = Quaternion.Euler(camXRotation, 0, 0);
     }
 
-    public void ChangeMouseSensibility(float value)
+	public void ChangeMouseSensibility(float value)
 	{
 		Debug.Log($"Value changed - {value}");
 		mouseSensY = value;
