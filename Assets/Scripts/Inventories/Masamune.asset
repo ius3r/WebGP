@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abc65d3ccad57e48a93ccf894c336d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 410ae88e8ad91914c8079c025e626d9c, type: 3}
   m_Name: Masamune
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   ItemName: Masamune
   isStackable: 0
   icon: {fileID: 0}
-  prefab: {fileID: 8126549786483665090, guid: a6c27a126b0011b43b5b8b483ac0a971, type: 3}
+  prefab: {fileID: 0}
