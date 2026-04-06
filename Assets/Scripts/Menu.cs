@@ -20,4 +20,9 @@ public class Menu : PersistentSingleton<Menu>
             SaveLoadSystem.instance.LoadGame("Menu");
         });
     }
+
+    public void StartPlayGameSingle()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }
