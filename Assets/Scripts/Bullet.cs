@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
+
+            // Raise the event for hitting an enemy (2f)
+            EventChannelManager.Instance.floatEvent.RaiseEvent(2f);
             //Destroy(gameObject);
             BulletObjectPool.Instance.ReturnToPool(this);
         }
